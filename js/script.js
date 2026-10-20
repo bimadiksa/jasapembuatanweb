@@ -48,7 +48,8 @@ let lastFocusedElement = null;
 const projectTitles = {
   "projects/landing-page/index.html": "Launch — Landing Page",
   "projects/company-profile/index.html": "Nexora — Company Profile",
-  "projects/coffee-shop/index.html": "Kopi Rumah — Website UMKM"
+  "projects/coffee-shop/index.html": "Kopi Rumah — Website UMKM",
+  "projects/gula-semut/index.html": "Gula Aren — Produk Gula Semut"
 };
 
 function openPreview(path) {

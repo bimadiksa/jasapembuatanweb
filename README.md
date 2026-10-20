@@ -7,4 +7,4 @@
 - `projects/landing-page/index.html` — demo preview landing page.
 - `projects/company-profile/index.html` — demo preview profil perusahaan.
 - `projects/coffee-shop/index.html` — demo preview website UMKM.
-
+- `projects/gula-semut/index.html` — demo preview produk gula aren.
