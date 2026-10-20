@@ -38,6 +38,34 @@ if ("IntersectionObserver" in window) {
 }
 
 // Preview demo proyek yang disimpan di folder /projects/.
+const projectPreviewContainers = document.querySelectorAll(".project-preview");
+const desktopPreviewWidth = 1280;
+
+function resizeProjectPreview(container) {
+  const frame = container.querySelector("iframe");
+  if (!frame || !container.clientWidth) return;
+
+  const scale = container.clientWidth / desktopPreviewWidth;
+  frame.style.height = `${container.clientHeight / scale}px`;
+  frame.style.transform = `scale(${scale})`;
+}
+
+if ("ResizeObserver" in window) {
+  const projectPreviewObserver = new ResizeObserver((entries) => {
+    entries.forEach(({ target }) => resizeProjectPreview(target));
+  });
+  projectPreviewContainers.forEach((container) => {
+    resizeProjectPreview(container);
+    projectPreviewObserver.observe(container);
+  });
+} else {
+  const resizeProjectPreviews = () => {
+    projectPreviewContainers.forEach(resizeProjectPreview);
+  };
+  resizeProjectPreviews();
+  window.addEventListener("resize", resizeProjectPreviews);
+}
+
 const previewModal = document.getElementById("previewModal");
 const previewFrame = document.getElementById("previewFrame");
 const modalTitle = document.getElementById("modalTitle");

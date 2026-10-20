@@ -105,3 +105,13 @@
   z-index: 3;
   pointer-events: none;
 }
+
+.project-preview iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1280px;
+  max-width: none;
+  height: 1000px;
+  transform-origin: top left;
+}
